@@ -10,7 +10,15 @@ class LoginPage extends StatelessWidget {
           color: Colors.amber,
           width: 340,
           height: 500,
-          child: Text("Hola mundo"),
+          child: Row(
+            children: <Widget>[
+              Column(
+                children: <Widget>[
+                  Image.asset("assets/logo_DeklinAPP.png")
+                ],
+              ),
+            ]
+          ),
         ),
       ),
     );
