@@ -8,6 +8,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'DeklinApp',
+      theme: ThemeData(
+        primaryColor: Colors.amber,
+        accentColor: Colors.redAccent[700]
+      ),
       debugShowCheckedModeBanner: false,
       debugShowMaterialGrid: false,
       initialRoute: '/',

@@ -5,7 +5,7 @@ import 'package:deklinapp/pages/register.dart';
 
 Map<String,WidgetBuilder> getApplicationRoutes(){
   return <String,WidgetBuilder>{
-    '/' : (BuildContext context) => LoginPage(),
+    '/' : (BuildContext context) => loginPage(),
     'register' : (BuildContext context) => RegisterPage()
   };
 }
