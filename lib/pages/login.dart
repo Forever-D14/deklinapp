@@ -1,26 +1,24 @@
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
+class loginPage extends StatelessWidget{
   @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(color: Colors.white),
-      child: Center(
-        child: Container(
-          color: Colors.amber,
-          width: 340,
-          height: 500,
-          child: Row(
-            children: <Widget>[
-              Column(
-                children: <Widget>[
-                  Image.asset("assets/logo_DeklinAPP.png")
-                ],
-              ),
-            ]
-          ),
+  Widget build(BuildContext context){
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'You have pushed the button this many times:',
+            ),
+          Container(child:Image.asset("assets/logo_DeklinAPP.png"))
+          ,
+
+          ],
         ),
       ),
+       // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+
 }

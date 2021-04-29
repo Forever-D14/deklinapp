@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: (RouteSettings settings){
         
         return MaterialPageRoute(
-          builder: (BuildContext context) => LoginPage()
+          builder: (BuildContext context) => loginPage()
           );
       },
     );
