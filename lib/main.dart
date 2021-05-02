@@ -9,6 +9,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'DeklinApp',
       theme: ThemeData(
+        fontFamily: 'ConcertOne',
         primaryColor: Colors.amber,
         accentColor: Colors.redAccent[700]
       ),

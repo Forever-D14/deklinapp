@@ -27,18 +27,37 @@ class MenuPage extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(left: 0.0, right: 0.0,top:50),
               child: RaisedButton(
-                textColor: Colors.amber,
-                color: Colors.white70,
+                textColor: Colors.black,
+                color: Colors.amber,
                 child: Column(
                  children: [
-                   Container(child: Image.asset("assets/medal.png",height: 50,width: 50),padding: EdgeInsets.only(top:10, bottom: 20),),
-                   Container(child: Text("Principiante"),padding: EdgeInsets.only(left: 10,right: 10,bottom: 10),),
-                   Container(child: Align( alignment: Alignment.center,child: Text("Obten un pequeño ",)),padding: EdgeInsets.only(left: 10,right: 10)),
-                   Container(child: Align( alignment: Alignment.center,child: Text("tutorial teorico de la ",)),padding: EdgeInsets.only(left: 10,right: 10)),
-                   Container(child: Align( alignment: Alignment.center,child: Text("declinacion",)),padding: EdgeInsets.only(left: 10,right: 10)),
-
-
-                 ], 
+                   Container(child: Image.asset("assets/medal.png",height: 50,width: 50),padding: EdgeInsets.only(top:30, bottom: 20),),
+                   Container(child: Text("Principiante",style: TextStyle(fontFamily: 'ConcertOne'),),padding: EdgeInsets.only(left: 10,right: 10,bottom: 10),),
+                   Container(child: Text("Obten un pequeño ",),padding: EdgeInsets.only(left: 10,right: 10)),
+                   Container(child: Text("tutorial teórico de la ",),padding: EdgeInsets.only(left: 10,right: 10)),
+                   Container(child: Text("declinación",),padding: EdgeInsets.only(left: 10,right: 10, bottom: 20)),
+                 ],
+                ),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                shape: new RoundedRectangleBorder(
+                  borderRadius: new BorderRadius.circular(30.0),
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 0.0, right: 0.0,top:50),
+              child: RaisedButton(
+                textColor: Colors.black,
+                color: Colors.redAccent[700],
+                child: Column(
+                  children: [
+                    Container(child: Image.asset("assets/trophy.png",height: 50,width: 50),padding: EdgeInsets.only(top:30, bottom: 20),),
+                    Container(child: Text("Avanzado"),padding: EdgeInsets.only(left: 50,right: 50,bottom: 10),),
+                    Container(child: Text("Vamos a los ",),padding: EdgeInsets.only(left: 10,right: 10)),
+                    Container(child: Text("ejercicios!!!!",),padding: EdgeInsets.only(left: 10,right: 10,bottom: 20)),
+                  ],
                 ),
                 onPressed: () {
                   Navigator.pop(context);
