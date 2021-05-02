@@ -1,17 +1,163 @@
 import 'package:flutter/material.dart';
 
-class RegisterPage extends StatelessWidget {
+class RegisterPage extends StatefulWidget {
+  @override
+  _RegisterPageState createState() => _RegisterPageState();
+}
 
+class _RegisterPageState extends State<RegisterPage> {
+  final usernameController = TextEditingController();
+  final nameController = TextEditingController();
+  final emailController = TextEditingController(); 
+  final pdController = TextEditingController(); 
+  final confirmController = TextEditingController();
+  
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    usernameController.dispose();
+    nameController.dispose();
+    emailController.dispose();
+    pdController.dispose();
+    confirmController.dispose();
+    super.dispose();
+  }
+
+  
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        children: [
-          Text("Logo"),
-          Text("Formulario")
-        ],
+    return Scaffold(
+      body: Center(
+        child: ListView(
+          children: <Widget>[
+            //contenedor de la imagen
+            Container(
+              child: Image.asset("assets/logo_DeklinAPP.png",height: 150,width: 150,),
+              padding: EdgeInsets.only(bottom: 15, top: 15),
+            ),
+            //contenedor 1er text field
+            Container(
+              child: TextField(
+                controller: usernameController,
+                enabled: true,
+                obscureText: false,
+                cursorColor: Colors.redAccent[700],
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Username:',fillColor: Colors.amber
+                )
+              ),
+              padding: EdgeInsets.only(bottom: 20,right: 20,left: 20),
+            ),
+            //nombre
+            Container(
+              child: TextField(
+                controller: nameController,
+                enabled: true,
+                obscureText: false,
+                cursorColor: Colors.redAccent[700],
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Name:',fillColor: Colors.amber
+                )
+              ),
+              padding: EdgeInsets.only(bottom: 20,right: 20,left: 20),
+            ),
+            //email
+            Container(
+              child: TextField(
+                controller: emailController,
+                enabled: true,
+                obscureText: false,
+                cursorColor: Colors.redAccent[700],
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Email:',fillColor: Colors.amber
+                )
+              ),
+              padding: EdgeInsets.only(bottom: 20,right: 20,left: 20),
+            ),
+            //password
+            Container(
+              child: TextField(
+                controller: pdController,
+                enabled: true,
+                obscureText: false,
+                cursorColor: Colors.redAccent[700],
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Password:',fillColor: Colors.amber
+                )
+              ),
+              padding: EdgeInsets.only(bottom: 20,right: 20,left: 20),
+            ),
+            
+            //confirm pass
+            Container(
+              child: TextField(
+                controller: confirmController,
+                enabled: true,
+                obscureText: false,
+                cursorColor: Colors.redAccent[700],
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Confirm:',fillColor: Colors.amber
+                )
+              ),
+              padding: EdgeInsets.only(bottom: 20,right: 20,left: 20),
+            ),
+
+            Container(
+              child: Row(
+                children: <Widget>[
+                  Container(
+                  child: Padding(
+                          padding: EdgeInsets.only(left: 0.0, right: 0.0),
+                          child: RaisedButton(
+                          textColor: Colors.amber,
+                          color: Colors.white70,
+                          child: Text("Cancel"),
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          shape: new RoundedRectangleBorder(
+                          borderRadius: new BorderRadius.circular(30.0),
+                           ),
+                          ),  
+                    ),
+                  padding: EdgeInsets.only(right: 0,left: 30),
+                ),
+
+                Container(
+                  child: Padding(
+                          padding: EdgeInsets.only(left: 100.0, right: 0.0),
+                          child: RaisedButton(
+                          textColor: Colors.white,
+                          color: Colors.amber,
+                          child: Text("Submit"),
+                          onPressed: () {
+                            showDialog(
+                              context: context,
+                              builder: (context){
+                                return AlertDialog(
+                                  content:Text(usernameController.text + "--------------" + pdController.text),
+                                );
+                              },
+                            );
+                          },
+                          shape: new RoundedRectangleBorder(
+                          borderRadius: new BorderRadius.circular(30.0),
+                           ),
+                          ),  
+                    )
+                )
+                ]
+              ),
+            ),
+            
+          ],
+        ),
       ),
     );
-
   }
 }
