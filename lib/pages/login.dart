@@ -114,25 +114,7 @@ class _loginPageState extends State<loginPage> {
                                 },
                               );
                             }
-
-                            //name2 = GetUserName(usernameController.text);
-                            //name =Text("Username: " + usernameController.text +" "+ pdController.text);
-                              //databaseReference.collection('users').doc(usernameController.text).set({'name': usernameController.text,'email':pdController.text});
-                              //name = GetUserName("Ignacio");
-
-
-
-                            //if(name.toString() != name2.toString()){
-                              //showDialog(
-                                //context: context,
-                                //builder: (context){
-                                 // return AlertDialog(
-                                  //  content:name,
-                                  //);
-                                //},
-                              //);}
-                              //Navigator.push(context, MaterialPageRoute(builder: (context) => MenuPage()));
-                              },
+                                                          },
                           shape: new RoundedRectangleBorder(
                           borderRadius: new BorderRadius.circular(30.0),
                            ),
@@ -152,34 +134,3 @@ class _loginPageState extends State<loginPage> {
   
 }
 
-//class GetUserName extends StatelessWidget {
-//  final String documentId;
-
-//  GetUserName(this.documentId);
-
-//  @override
-//  Widget build(BuildContext context) {
-//    CollectionReference users = FirebaseFirestore.instance.collection('users');
-
-//    return FutureBuilder<DocumentSnapshot>(
-//      future: users.doc(documentId).get(),
-//  builder:
-//          (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
-
-//        if (snapshot.hasError) {
-//          return Text("Something went wrong");
-//        }else
-
-//        if (snapshot.hasData && !snapshot.data.exists) {
-//          return Text("Document does not exist");
-//        }else
-
-//        if (snapshot.connectionState == ConnectionState.done) {
-//          Map<String, dynamic> data = snapshot.data.data();
-//          return Text("Username: ${data['name']} ${data['email']}");
-//        }else
-//          return Text("loading");
-//      },
-//    );
-//  }
-//}

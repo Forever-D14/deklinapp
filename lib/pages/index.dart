@@ -1,3 +1,4 @@
+import 'package:deklinapp/pages/exercise.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:deklinapp/pages/nominativ.dart';
@@ -62,7 +63,7 @@ class MenuPage extends StatelessWidget {
                   ],
                 ),
                 onPressed: () {
-                  Navigator.pop(context);
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Exercise(index: 1,)));
                 },
                 shape: new RoundedRectangleBorder(
                   borderRadius: new BorderRadius.circular(30.0),
