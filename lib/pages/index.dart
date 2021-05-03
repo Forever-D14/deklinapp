@@ -34,12 +34,13 @@ class MenuPage extends StatelessWidget {
                    Container(child: Image.asset("assets/medal.png",height: 50,width: 50),padding: EdgeInsets.only(top:30, bottom: 20),),
                    Container(child: Text("Principiante",style: TextStyle(fontFamily: 'ConcertOne'),),padding: EdgeInsets.only(left: 10,right: 10,bottom: 10),),
                    Container(child: Text("Obten un pequeño ",),padding: EdgeInsets.only(left: 10,right: 10)),
-                   Container(child: Text("tutorial teórico de laa ",),padding: EdgeInsets.only(left: 10,right: 10)),
+                   Container(child: Text("tutorial teórico de la ",),padding: EdgeInsets.only(left: 10,right: 10)),
                    Container(child: Text("declinación",),padding: EdgeInsets.only(left: 10,right: 10, bottom: 20)),
                  ],
                 ),
                 onPressed: () {
-                  Navigator.pop(context);
+                  //nueva ruta
+                  Navigator.pushNamed(context, 'nominativ');
                 },
                 shape: new RoundedRectangleBorder(
                   borderRadius: new BorderRadius.circular(30.0),
