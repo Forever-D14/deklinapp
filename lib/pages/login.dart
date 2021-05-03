@@ -1,6 +1,9 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:deklinapp/pages/register.dart';
 import 'package:deklinapp/pages/index.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 
   class loginPage extends StatefulWidget {
     @override
@@ -12,6 +15,7 @@ import 'package:deklinapp/pages/index.dart';
 class _loginPageState extends State<loginPage> {
     final usernameController = TextEditingController();
     final pdController = TextEditingController();
+    final databaseReference = FirebaseFirestore.instance;
 
     @override
   void dispose() {
@@ -73,6 +77,7 @@ class _loginPageState extends State<loginPage> {
                           color: Colors.white70,
                           child: Text("Registrarse"),
                           onPressed: () {
+
                             Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterPage()));
                           },
                           shape: new RoundedRectangleBorder(
@@ -91,6 +96,7 @@ class _loginPageState extends State<loginPage> {
                           color: Colors.amber,
                           child: Text("Log-In"),
                           onPressed: () {
+                              databaseReference.collection('users').add({'name': usernameController.text,'email':pdController.text});
                               Navigator.push(context, MaterialPageRoute(builder: (context) => MenuPage()));
                               },
                           shape: new RoundedRectangleBorder(
