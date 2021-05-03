@@ -16,7 +16,7 @@ import 'package:flutter/services.dart';
 
 
 class _loginPageState extends State<loginPage> {
-    final usernameController = TextEditingController();
+    final emailController = TextEditingController();
     final pdController = TextEditingController();
     final databaseReference = FirebaseFirestore.instance;
     CollectionReference users = FirebaseFirestore.instance.collection('users');
@@ -25,7 +25,7 @@ class _loginPageState extends State<loginPage> {
     @override
   void dispose() {
     // Clean up the controller when the widget is disposed.
-    usernameController.dispose();
+    emailController.dispose();
     pdController.dispose();
     super.dispose();
   }
@@ -47,7 +47,7 @@ class _loginPageState extends State<loginPage> {
           
           Container(
             child: TextField(
-              controller: usernameController,
+              controller: emailController,
               enabled: true,
               obscureText: false,
               cursorColor: Colors.redAccent[700],
@@ -105,7 +105,7 @@ class _loginPageState extends State<loginPage> {
                           child: Text("Log-In"),
                           onPressed: () async{
                             AuthService auth = AuthService();
-                            User user = await auth.signIn(usernameController.text, pdController.text);
+                            User user = await auth.signIn(emailController.text, pdController.text);
                             if(user != null){
                               Navigator.push(context, MaterialPageRoute(builder: (context) => MenuPage()));
                             }else{
