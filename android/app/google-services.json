@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "298649047481",
+    "project_id": "deklinapp",
+    "storage_bucket": "deklinapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:298649047481:android:b4a87fb6316683f4ef2668",
+        "android_client_info": {
+          "package_name": "com.example.deklinapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "298649047481-fl60r5agdf24a8vcfc1e5k7dprc88rsv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1Wbh34WYP5tOSGxliAPFchoR2OIt0O6I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "298649047481-fl60r5agdf24a8vcfc1e5k7dprc88rsv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
