@@ -25,7 +25,7 @@ class _ExerciseState extends State<Exercise>{
   @override
   Widget build(BuildContext context) {
     final String id = "#"+widget.index.toString();
-    return Scaffold(
+    return new WillPopScope(child: Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
         leading: Container(child:Image.asset("assets/logo_DeklinAPP.png",height: 50,width: 50), padding: EdgeInsets.only(left:10.0)),
@@ -49,7 +49,7 @@ class _ExerciseState extends State<Exercise>{
           ],
         ),
       ),
-    );
+    ), onWillPop: () async => false);
   }
 
 }

@@ -6,6 +6,7 @@ import 'package:deklinapp/pages/index.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:deklinapp/pages/auth_service.dart';
+import 'package:flutter/services.dart';
 
   class loginPage extends StatefulWidget {
     @override
@@ -31,6 +32,9 @@ class _loginPageState extends State<loginPage> {
 
    @override
    Widget build(BuildContext context){
+     SystemChrome.setPreferredOrientations([
+       DeviceOrientation.portraitUp,
+     ]);
       return Scaffold(
       body: Center(
         child: ListView(
