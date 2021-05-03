@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:deklinapp/pages/dativ.dart';
 
 class AkkusativPage extends StatelessWidget {
   @override
@@ -24,7 +25,7 @@ class AkkusativPage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: (){
-          Navigator.pushNamed(context, 'dativ');
+          Navigator.push(context, MaterialPageRoute(builder: (context) => DativPage()));
         },
         child: Icon(Icons.arrow_forward),
       ),

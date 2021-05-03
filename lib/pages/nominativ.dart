@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:deklinapp/pages/akkusativ.dart';
 
 class NominativPage extends StatelessWidget {
   const NominativPage({Key key}) : super(key: key);
@@ -26,7 +27,7 @@ class NominativPage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: (){
-          Navigator.pushNamed(context, 'akkusativ');
+          Navigator.push(context, MaterialPageRoute(builder: (context) => AkkusativPage()));
         },
         child: Icon(Icons.arrow_forward),
       ),

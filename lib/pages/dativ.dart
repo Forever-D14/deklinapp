@@ -25,7 +25,7 @@ class DativPage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: (){
-          Navigator.pushNamed(context, 'index');
+          //Navigator.pushNamed(context, 'index');
         },
         child: Icon(Icons.arrow_forward),
       ),
