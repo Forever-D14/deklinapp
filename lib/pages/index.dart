@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:deklinapp/pages/nominativ.dart';
 
 //este será el menu de la app
 
@@ -39,7 +40,8 @@ class MenuPage extends StatelessWidget {
                  ],
                 ),
                 onPressed: () {
-                  Navigator.pop(context);
+                  //nueva ruta
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => NominativPage()));
                 },
                 shape: new RoundedRectangleBorder(
                   borderRadius: new BorderRadius.circular(30.0),
