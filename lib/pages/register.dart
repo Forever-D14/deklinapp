@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:deklinapp/pages/auth_service.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -135,15 +137,24 @@ class _RegisterPageState extends State<RegisterPage> {
                           textColor: Colors.white,
                           color: Colors.amber,
                           child: Text("Submit"),
-                          onPressed: () {
-                            showDialog(
-                              context: context,
-                              builder: (context){
-                                return AlertDialog(
-                                  content:Text(usernameController.text + "--------------" + pdController.text),
-                                );
-                              },
-                            );
+                          onPressed: () async {
+                            AuthService auth = AuthService();
+                            UserCredential credential = await auth.register(usernameController.text, pdController.text);
+                            if(credential != null)
+                              Navigator.pop(context);
+                            else{
+                              showDialog(
+                                context: context,
+                                builder: (context){
+                                  return AlertDialog(
+                                    content:Text("Algo salio mal!!!!"),
+                                  );
+                                },
+                              );
+                            }
+
+
+
                           },
                           shape: new RoundedRectangleBorder(
                           borderRadius: new BorderRadius.circular(30.0),

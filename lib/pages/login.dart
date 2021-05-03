@@ -1,9 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:deklinapp/pages/register.dart';
 import 'package:deklinapp/pages/index.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:deklinapp/pages/auth_service.dart';
 
   class loginPage extends StatefulWidget {
     @override
@@ -16,6 +18,8 @@ class _loginPageState extends State<loginPage> {
     final usernameController = TextEditingController();
     final pdController = TextEditingController();
     final databaseReference = FirebaseFirestore.instance;
+    CollectionReference users = FirebaseFirestore.instance.collection('users');
+    Widget name,name2;
 
     @override
   void dispose() {
@@ -95,9 +99,39 @@ class _loginPageState extends State<loginPage> {
                           textColor: Colors.white,
                           color: Colors.amber,
                           child: Text("Log-In"),
-                          onPressed: () {
-                              databaseReference.collection('users').add({'name': usernameController.text,'email':pdController.text});
+                          onPressed: () async{
+                            AuthService auth = AuthService();
+                            User user = await auth.signIn(usernameController.text, pdController.text);
+                            if(user != null){
                               Navigator.push(context, MaterialPageRoute(builder: (context) => MenuPage()));
+                            }else{
+                              showDialog(
+                                context: context,
+                                builder: (context){
+                                  return AlertDialog(
+                                    content:Text("USUARIO O CONTRASEÑA INCORRECTA"),
+                                  );
+                                },
+                              );
+                            }
+
+                            //name2 = GetUserName(usernameController.text);
+                            //name =Text("Username: " + usernameController.text +" "+ pdController.text);
+                              //databaseReference.collection('users').doc(usernameController.text).set({'name': usernameController.text,'email':pdController.text});
+                              //name = GetUserName("Ignacio");
+
+
+
+                            //if(name.toString() != name2.toString()){
+                              //showDialog(
+                                //context: context,
+                                //builder: (context){
+                                 // return AlertDialog(
+                                  //  content:name,
+                                  //);
+                                //},
+                              //);}
+                              //Navigator.push(context, MaterialPageRoute(builder: (context) => MenuPage()));
                               },
                           shape: new RoundedRectangleBorder(
                           borderRadius: new BorderRadius.circular(30.0),
@@ -117,3 +151,35 @@ class _loginPageState extends State<loginPage> {
    }
   
 }
+
+//class GetUserName extends StatelessWidget {
+//  final String documentId;
+
+//  GetUserName(this.documentId);
+
+//  @override
+//  Widget build(BuildContext context) {
+//    CollectionReference users = FirebaseFirestore.instance.collection('users');
+
+//    return FutureBuilder<DocumentSnapshot>(
+//      future: users.doc(documentId).get(),
+//  builder:
+//          (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
+
+//        if (snapshot.hasError) {
+//          return Text("Something went wrong");
+//        }else
+
+//        if (snapshot.hasData && !snapshot.data.exists) {
+//          return Text("Document does not exist");
+//        }else
+
+//        if (snapshot.connectionState == ConnectionState.done) {
+//          Map<String, dynamic> data = snapshot.data.data();
+//          return Text("Username: ${data['name']} ${data['email']}");
+//        }else
+//          return Text("loading");
+//      },
+//    );
+//  }
+//}
