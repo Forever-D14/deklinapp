@@ -53,7 +53,7 @@ class _loginPageState extends State<loginPage> {
               cursorColor: Colors.redAccent[700],
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: 'Username:',fillColor: Colors.amber
+                labelText: 'Email:',fillColor: Colors.amber
               )
             ),
             padding: EdgeInsets.only(bottom: 20,right: 20,left: 20),
@@ -124,10 +124,16 @@ class _loginPageState extends State<loginPage> {
                            ),
                           ),  
                     )
-                )
+                ),
+
               ]
             ),
           ),
+            Center(child: Column(children:[
+              Container(child: Text("Ignacio Díaz Romero 201734055",style: TextStyle(color: Colors.grey),),padding: EdgeInsets.only(top:100),),
+              Text("Christiam Alberto Parraguirre Lagunes 201758915",style: TextStyle(color: Colors.grey)),
+              Text("v1.0.0",style: TextStyle(color: Colors.grey)),
+            ] ),)
 
         ],
         ),
