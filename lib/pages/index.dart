@@ -63,7 +63,7 @@ class MenuPage extends StatelessWidget {
                   ],
                 ),
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Exercise(index: 1,)));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Exercise(index: 1,puntuacion: 0,)));
                 },
                 shape: new RoundedRectangleBorder(
                   borderRadius: new BorderRadius.circular(30.0),
